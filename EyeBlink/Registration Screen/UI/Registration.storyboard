@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7G2-Ga-B98">
-                                <rect key="frame" x="92" y="189" width="230" height="287"/>
+                                <rect key="frame" x="92" y="108" width="230" height="287"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce2-eF-3Lx">
                                         <rect key="frame" x="67.5" y="0.0" width="95" height="24"/>
@@ -69,7 +69,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqe-Pq-ddU">
+                                    <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqe-Pq-ddU">
                                         <rect key="frame" x="0.0" y="242" width="230" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="230" id="0dq-NH-8D3"/>
@@ -80,11 +80,18 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn to apply you agree to Our Terms of Conditions &amp; Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ2-5m-5i6">
+                                <rect key="frame" x="20" y="806" width="374" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7G2-Ga-B98" firstAttribute="centerX" secondItem="bga-KM-pGF" secondAttribute="centerX" id="519-XA-Ldb"/>
-                            <constraint firstItem="7G2-Ga-B98" firstAttribute="centerY" secondItem="bga-KM-pGF" secondAttribute="centerY" multiplier="0.7" id="9dZ-4a-UbO"/>
+                            <constraint firstItem="7G2-Ga-B98" firstAttribute="top" secondItem="bga-KM-pGF" secondAttribute="top" constant="20" id="KwY-pQ-n6L"/>
                             <constraint firstItem="Jna-AO-4Vt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7G2-Ga-B98" secondAttribute="bottom" constant="8" id="Pcw-32-sDA"/>
                             <constraint firstItem="Jna-AO-4Vt" firstAttribute="centerX" secondItem="bga-KM-pGF" secondAttribute="centerX" id="UYo-LF-ZpG"/>
                             <constraint firstItem="bga-KM-pGF" firstAttribute="bottom" secondItem="Jna-AO-4Vt" secondAttribute="bottom" constant="64" id="t44-bl-3Rb"/>
@@ -101,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbp-ci-fCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="92"/>
+            <point key="canvasLocation" x="834.78260869565224" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IdE-1g-AmN">

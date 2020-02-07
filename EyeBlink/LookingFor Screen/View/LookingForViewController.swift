@@ -1,24 +1,49 @@
 import UIKit
 
-class LookingForViewController: BaseViewController<LookingForViewModel> {
+class LookingForViewController: BaseViewController<LookingForViewModel>, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    enum PickerType {
+        case gender, location, age
+        
+        func values() -> [String] {
+            switch self {
+            case .gender:
+                return ["Male", "Female", "Other"]
+            case .location:
+                return ["Neighbourhood", "Anywhere"]
+            case .age:
+                return ["10","20","30","40","50","60","70","80","90"]
+            }
+        }
+        
+        func componentsAmount() -> Int {
+            return self == .age ? 2 : 1
+        }
+    }
     
     // MARK: - Outlets
     
     @IBOutlet weak var genderTextField: UITextField! {
         didSet {
             genderTextField.setMainTextFieldSettings()
+            genderTextField.delegate = self
+            genderTextField.inputView = pickerView
         }
     }
     
     @IBOutlet weak var ageRangeTextField: UITextField! {
         didSet {
             ageRangeTextField.setMainTextFieldSettings()
+            ageRangeTextField.delegate = self
+            ageRangeTextField.inputView = pickerView
         }
     }
     
     @IBOutlet weak var locationTextField: UITextField! {
         didSet {
             locationTextField.setMainTextFieldSettings()
+            locationTextField.delegate = self
+            locationTextField.inputView = pickerView
         }
     }
     
@@ -28,20 +53,22 @@ class LookingForViewController: BaseViewController<LookingForViewModel> {
         }
     }
     
+    var pickerView = UIPickerView()
+    
     // MARK: - Actions
     
     @IBAction func nextButtonPressed() {
         
     }
     
+    private var pickerState: PickerType = .age
+    
     // MARK: - Lyfecycle
     
     override func viewDidLoad() {
         self.setGradientBackground()
         self.hidingKeyboardSettings()
-        
-        createDayPicker()
-        createToolbar()
+        pickerView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,77 +76,66 @@ class LookingForViewController: BaseViewController<LookingForViewModel> {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func createDayPicker() {
-        
-        let dayPicker = UIPickerView()
-        dayPicker.delegate = self
-        
-        ageRangeTextField.inputView = dayPicker
-        
-        //Customizations
-//        dayPicker.backgroundColor = .black
-    }
-    
-    
-    func createToolbar() {
-        
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        //Customizations
-//        toolBar.barTintColor = .black
-//        toolBar.tintColor = .white
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(LookingForViewController.dismissKeyboard))
-        
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        ageRangeTextField.inputAccessoryView = toolBar
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-extension LookingForViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    // MARK: - UIPickerView Delegate and DataSource
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return pickerState.componentsAmount()
     }
-    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.
+        return pickerState.values().count
     }
-    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.genderArray[row]
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        ageRangeTextField.text = viewModel.genderArray[row]
+        return pickerState.values()[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
+        
         var label: UILabel
-
+        
         if let view = view as? UILabel {
             label = view
         } else {
             label = UILabel()
         }
-
-//        label.textColor = .green
+        
         label.textAlignment = .center
-//        label.font = UIFont(name: "Menlo-Regular", size: 17)
-
-        label.text = viewModel.genderArray[row]
-
+        
+        label.text = pickerState.values()[row]
+        
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerState {
+        case .age:
+            ageRangeTextField.text = "\(pickerState.values()[row])"
+        case .gender:
+            genderTextField.text = pickerState.values()[row]
+        case .location:
+            locationTextField.text = pickerState.values()[row]
+        }
+        
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 101:
+            pickerState = .gender
+            pickerView.reloadAllComponents()
+            return true
+        case 102:
+            pickerState = .age
+            pickerView.reloadAllComponents()
+            return true
+        case 103:
+            pickerState = .location
+            pickerView.reloadAllComponents()
+            return true
+        default:
+            return false
+        }
     }
 }

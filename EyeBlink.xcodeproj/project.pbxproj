@@ -10,7 +10,6 @@
 		38655C8E96E15F2E8A75F4BE /* Pods_EyeBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C361A82F6EEF64B2C247034 /* Pods_EyeBlink.framework */; };
 		E16D00AD23ED588100F146E2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16D00AC23ED588100F146E2 /* String.swift */; };
 		E16D00AF23ED588A00F146E2 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16D00AE23ED588A00F146E2 /* Dictionary.swift */; };
-		E16D00B123ED62BC00F146E2 /* AgePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16D00B023ED62BC00F146E2 /* AgePickerView.swift */; };
 		E184699823EC26BC004342E1 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184699723EC26BC004342E1 /* Observer.swift */; };
 		E184699A23EC26C0004342E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184699923EC26C0004342E1 /* ViewModel.swift */; };
 		E184699C23EC26C3004342E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184699B23EC26C3004342E1 /* BaseViewController.swift */; };
@@ -44,7 +43,6 @@
 		54A7BB25C8694391042BC523 /* Pods-EyeBlink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeBlink.debug.xcconfig"; path = "Target Support Files/Pods-EyeBlink/Pods-EyeBlink.debug.xcconfig"; sourceTree = "<group>"; };
 		E16D00AC23ED588100F146E2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E16D00AE23ED588A00F146E2 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		E16D00B023ED62BC00F146E2 /* AgePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePickerView.swift; sourceTree = "<group>"; };
 		E184699723EC26BC004342E1 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		E184699923EC26C0004342E1 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E184699B23EC26C3004342E1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 		E1A8B79123EB223B00733D02 /* EyeBlink */ = {
 			isa = PBXGroup;
 			children = (
-				E16D00B023ED62BC00F146E2 /* AgePickerView.swift */,
 				E1DA5CDA23EC646200ED4C58 /* Registration Screen */,
 				E18469A323EC2BFF004342E1 /* LookingFor Screen */,
 				E1A8B7B123EB22DB00733D02 /* Extensions */,
@@ -395,7 +392,6 @@
 				E18469A023EC26CB004342E1 /* CompositionRoot.swift in Sources */,
 				E1A8B7B623EB22EA00733D02 /* RTCStates.swift in Sources */,
 				E1A8B7B023EB22D400733D02 /* Config.swift in Sources */,
-				E16D00B123ED62BC00F146E2 /* AgePickerView.swift in Sources */,
 				E1A8B7B723EB22EA00733D02 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

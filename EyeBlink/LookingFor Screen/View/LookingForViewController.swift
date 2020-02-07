@@ -21,6 +21,11 @@ class LookingForViewController: BaseViewController<LookingForViewModel>, UITextF
         }
     }
     
+    struct AgeRange {
+        var fromAge = "10"
+        var toAge = "10"
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var genderTextField: UITextField! {
@@ -54,7 +59,7 @@ class LookingForViewController: BaseViewController<LookingForViewModel>, UITextF
     }
     
     var pickerView = UIPickerView()
-    
+    var ageRange = AgeRange()
     // MARK: - Actions
     
     @IBAction func nextButtonPressed() {
@@ -111,7 +116,19 @@ class LookingForViewController: BaseViewController<LookingForViewModel>, UITextF
         
         switch pickerState {
         case .age:
-            ageRangeTextField.text = "\(pickerState.values()[row])"
+            
+            switch component {
+            case 0:
+                ageRange.fromAge = pickerState.values()[row]
+                
+            case 1:
+                ageRange.toAge = pickerState.values()[row]
+            default:
+                return
+            }
+        
+            ageRangeTextField.text = "\(ageRange.fromAge) - \(ageRange.toAge)"
+            
         case .gender:
             genderTextField.text = pickerState.values()[row]
         case .location:

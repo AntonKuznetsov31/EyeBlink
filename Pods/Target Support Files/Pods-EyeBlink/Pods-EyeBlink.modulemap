@@ -1,0 +1,6 @@
+framework module Pods_EyeBlink {
+  umbrella header "Pods-EyeBlink-umbrella.h"
+
+  export *
+  module * { export * }
+}

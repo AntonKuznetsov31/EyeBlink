@@ -18,8 +18,6 @@ class BaseViewController<T>: UIViewController where T: ViewModel  {
     
     // MARK: - Methods
     
-    func bindWithObserver() {}
-    
     func set(viewModel: T) {
         self.viewModel = viewModel
     }
@@ -33,7 +31,6 @@ class BaseViewController<T>: UIViewController where T: ViewModel  {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        bindWithObserver()
         viewModel.viewWillAppear()
     }
     
@@ -55,6 +52,7 @@ class BaseViewController<T>: UIViewController where T: ViewModel  {
     func willEnterForeground() {
         viewModel.willEnterForeground()
     }
+    
     func didEnterBackground() {
         viewModel.didEnterBackground()
     }

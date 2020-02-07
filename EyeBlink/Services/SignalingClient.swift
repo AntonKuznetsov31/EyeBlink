@@ -90,7 +90,7 @@ final class SignalingClient {
         print("fix");
         var message:String = "";
         do {
-            var json = try JSON(data: data)
+            let json = try JSON(data: data)
             
             //json["type"] = "localDescription"
             //json.dictionaryObject?.switchKey(fromKey: "payload", toKey: "description")

@@ -30,10 +30,6 @@ class Coordinator {
     
     // MARK: - Methods
     
-    func goResultViewController(result: String) {
-        push(compositionRoot.resolveResultViewController(result: result))
-    }
-    
     func push(_ vc: UIViewController) {
         if let baseNavigationController = baseNavigationController {
             baseNavigationController.pushViewController(vc, animated: true)

@@ -1,11 +1,3 @@
-//
-//  CompositionRoot.swift
-//  MVVMtest
-//
-//  Created by Daria on 27.01.2020.
-//  Copyright © 2020 Anton Kuznetsov. All rights reserved.
-//
-
 import UIKit
 
 class CompositionRoot {
@@ -29,25 +21,30 @@ class CompositionRoot {
         rootTabBarController.tabBar.isTranslucent = false
     }
     
-    func resolveUserMessageViewController() -> UserMessageViewController {
-        let userMessageVC = UserMessageViewController.instantiateFromStoryboard("Message")
-        userMessageVC.viewModel = resolveUserMessageViewModel()
-        return userMessageVC
+    // MARK: - Resolve ViewController
+    
+    func resolveRegistrationViewController() -> RegistrationViewController {
+        let registrationVC = RegistrationViewController.instantiateFromStoryboard("Registration")
+        registrationVC.viewModel = resolveRegistrationViewModel()
+        return registrationVC
     }
     
-    func resolveResultViewController(result: String) -> ResultViewController {
-        let resultVC = ResultViewController.instantiateFromStoryboard("Result")
-        resultVC.viewModel = resolveResultViewModel(result: result)
-        return resultVC
+    func resolveLookingForViewController() -> LookingForViewController {
+        let lookingForVC = LookingForViewController.instantiateFromStoryboard("LookingFor")
+        lookingForVC.viewModel = resolveLookingForViewModel()
+        return lookingForVC
     }
     
-    // MARK: - ViewModel Resolve
+    // MARK: - Resolve ViewModel
     
-    func resolveUserMessageViewModel() -> UserMessageViewModel {
-        return UserMessageViewModel()
+    func resolveRegistrationViewModel() -> RegistrationViewModel {
+        return RegistrationViewModel()
     }
     
-    func resolveResultViewModel(result: String) -> ResultViewModel {
-        return ResultViewModel(result: result)
+    func resolveLookingForViewModel() -> LookingForViewModel {
+        return LookingForViewModel()
     }
+    
+    
+    
 }

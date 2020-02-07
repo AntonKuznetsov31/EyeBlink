@@ -1,0 +1,24 @@
+PODS:
+  - GoogleWebRTC (1.1.29400)
+  - Starscream (3.1.1)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - GoogleWebRTC (~> 1.1.29229)
+  - Starscream (~> 3.1.0)
+  - SwiftyJSON (~> 4.3.0)
+
+SPEC REPOS:
+  trunk:
+    - GoogleWebRTC
+    - Starscream
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  GoogleWebRTC: cfb83bc346435a17fe06bb05f04ad826b858a7fb
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 150e4621b029c1dc7570b534ad14f76a36d63005
+
+COCOAPODS: 1.8.4

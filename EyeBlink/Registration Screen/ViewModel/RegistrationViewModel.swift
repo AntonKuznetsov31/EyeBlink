@@ -1,5 +1,5 @@
 import Foundation
 
-class SignUpViewModel: ViewModel {
+class RegistrationViewModel: ViewModel {
     
 }

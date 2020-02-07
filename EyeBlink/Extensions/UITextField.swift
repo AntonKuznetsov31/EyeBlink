@@ -1,9 +1,11 @@
-//
-//  UITextField.swift
-//  EyeBlink
-//
-//  Created by Anton Kuznetsov on 06.02.2020.
-//  Copyright © 2020 Anton Kuznetsov. All rights reserved.
-//
+import UIKit
 
-import Foundation
+extension UITextField {
+    
+    func setMainTextFieldSettings() {
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2.0
+        self.clipsToBounds = true
+    }
+    
+}

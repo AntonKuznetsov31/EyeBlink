@@ -1,21 +1,21 @@
 import Foundation
 import UIKit
 
-class SignUpViewController: BaseViewController<SignUpViewModel> {
+class RegistrationViewController: BaseViewController<RegistrationViewModel> {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var nicknameTextField: UITextField! {
+    @IBOutlet weak var usernameTextField: UITextField! {
         didSet {
-            nicknameTextField.setMainTextFieldSettings()
-            nicknameTextField.keyboardType = .namePhonePad
+            usernameTextField.setMainTextFieldSettings()
+            usernameTextField.keyboardType = .namePhonePad
         }
     }
     
     @IBOutlet weak var ageTextField: UITextField! {
         didSet {
             ageTextField.setMainTextFieldSettings()
-            ageTextField.keyboardType = .asciiCapableNumberPad
+            usernameTextField.keyboardType = .decimalPad
         }
     }
     
@@ -25,15 +25,15 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         }
     }
     
-    @IBOutlet weak var enterButton: UIButton! {
+    @IBOutlet weak var applyButton: UIButton! {
         didSet {
-            enterButton.setOrangeButtonSettings()
+            applyButton.setOrangeButtonSettings()
         }
     }
     
     // MARK: - Actions
     
-    @IBAction func enterButtonPressed() {
+    @IBAction func applyButtonPressed() {
         
     }
     
@@ -49,7 +49,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(false, animated: false)
+//    }
 }
